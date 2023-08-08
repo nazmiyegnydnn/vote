@@ -1,0 +1,25 @@
+.todo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 500px;
+    margin-left: 400px;
+    margin-top: 50px;
+    .todo-points{
+        border: 1px solid #333333;
+        background-color: gray;
+        color: black;
+        padding: 10px;
+    }
+    .todo-name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 50px;
+        li{
+            list-style-type: none;
+        }
+    }
+}
