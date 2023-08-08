@@ -1,18 +1,17 @@
 import React from 'react'
 import "./Todo.scss"
 
-const Todo = ({name,url,points }
+const Todo = ({todo}) => {
 
-) => {
   return (
     <div className='todo'>
     <div className='todo-points'>
-        <p>{points}</p>
+        <p>{todo.points}</p>
         <span>POİNTS</span>
     </div>
     <div className='todo-name'>
-    <p>{name}</p>
-    <li className='todo-items'>{url}</li>
+    <p>{todo.name}</p>
+    <li className='todo-items'>{todo.url}</li>
     </div>
     </div>
   )

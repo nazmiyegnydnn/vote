@@ -7,8 +7,7 @@ import Todolist from '../todoList/Todolist';
 const Home = () => {
   const [inputText, setInputText] = useState('');
   const [inputUrl, setInputUrl] = useState('');
-  const [todos, setTodos] = useState([]);
-  const [points, setPoints] = useState([])
+  // const [points, setPoints] = useState([])
 
   
   return (
@@ -19,12 +18,9 @@ const Home = () => {
         setInputUrl={setInputUrl}
         inputText={inputText}
         setInputText={setInputText}
-        todos={todos}
-        setTodos={setTodos}
         />
         <Todolist
-        todos={todos}
-        points={points}
+        // points={points}
         />
     </div>
   )

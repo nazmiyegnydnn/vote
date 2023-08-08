@@ -1,20 +1,20 @@
 import React from 'react'
 import './Main.scss'
 import { useState } from 'react';
-
+import {submitTodoHandler } from "../appSlice";
+import { useDispatch} from "react-redux";
 
 const Main = (
-{  inputUrl,
-  setInputUrl,
+{  
   inputText,
   setInputText,
-  todos,
-  setTodos
-}
+  setInputUrl,
+  inputUrl,}
 ) => {
   const [alertWarning, setAlertWarning] = useState(false);
   const [alertSuccess, setAlertSuccess] = useState(false);
-
+  
+  const dispatch = useDispatch()
 
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
@@ -24,7 +24,8 @@ const Main = (
     setInputUrl(e.target.value);
   };
 
-  const submitTodoHandler = () => {
+  const handleButtonFocus = () => {
+    dispatch(submitTodoHandler({ name: inputText, url:inputUrl, points:Math.floor(Math.random() * 10) , id: Math.floor(Math.random() * 10) }));
     const isEmpty = (str) => !str.trim().length;
     if (isEmpty(inputText) || isEmpty(inputUrl)) {
       setAlertWarning(true);
@@ -36,15 +37,10 @@ const Main = (
       setTimeout(() => {
         setAlertSuccess(false);
       }, 1000);
-      setTodos([
-        ...todos,
-        { name: inputText, url: inputUrl, points: Math.floor(Math.random() * 10),  id:Math.floor(Math.random() * 10) },
-      ]);
       setInputText('');
       setInputUrl('');
     }
-
-    console.log(todos);
+   
   };
 
 
@@ -69,7 +65,7 @@ const Main = (
       </div>
     </div>
     <div className='todo-button'>
-       <button onClick={submitTodoHandler}>ADD</button>
+       <button onClick={handleButtonFocus}>ADD</button>
     </div>
     <div className='alert-wrapper'>
          {alertWarning ?  <div className='alert-warning'>

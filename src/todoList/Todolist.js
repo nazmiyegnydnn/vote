@@ -1,18 +1,17 @@
 import React from 'react'
 import './Todolist.scss'
 import Todo from '../todo/Todo'
+import { useSelector } from "react-redux";
 
-const Todolist = ({todos }) => {
+const Todolist = () => {
+const { todos } = useSelector((state) => state.app);
+
   return (
     <div>
       <ul>
          {
             todos.map((todo) => (
-               <Todo
-               name={todo.name}
-               url={todo.url}
-               points={todo.points}
-            />
+               <Todo todo={todo}/>
             ))
          }
       </ul>

@@ -1,16 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit' 
 
 const initialState = { //dizimiz depomuz burada
-    product: [
-        {
-            id:1,
-            name: "tolga"
-        },
-        {
-            id:2,
-            name: "tolga"
-        }
-    ],
+    todos: [],
 }
   
 
@@ -19,13 +10,14 @@ const initialState = { //dizimiz depomuz burada
     initialState,
     reducers: {
             // kull olay //
-             addcategory : (state , action)  => {
-            state.category = [...state.category , {id:3 , name: "c3"}]  
-        }
+            submitTodoHandler : (state , action)  => {
+            state.todos = [...state.todos ,  action.payload] 
         
+        }
+    
     }
   })
 
-  export const {addcategory } = appSlice.actions  //appslice kendi dosyomızın ismine göre değişitir.//olayı gönderiyoruz
+  export const {submitTodoHandler } = appSlice.actions  //appslice kendi dosyomızın ismine göre değişitir.//olayı gönderiyoruz
 
   export default appSlice.reducer  //appslice kendi dosyomızın ismine göre değişitir.
