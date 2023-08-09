@@ -1,4 +1,5 @@
 .todo{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,13 +51,31 @@
             }
         }
         .like{
-            margin-left: -411px;
-            margin-top: 55px;
-        
+            position: absolute  ;
+            top: 65px;
+            right: 303px;
+            width: 93px;
         }
         .dislike{
-            margin-left: 180px;
-            margin-top: 55px;
+            position: absolute;
+            right: 9px;
+            top: 69px;
         }
+    }
+    .todo-delete{
+        position: absolute;
+        bottom: 85px;
+        right: -12px;
+        button{
+          background-color: red;
+          color: white;
+          border-radius: 100px;
+          border: black;
+          box-shadow: black;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+       
     }
 }

@@ -25,10 +25,16 @@ export const appSlice = createSlice({
       );
       state.todos = updatedTodos;
     },
+    deleteTodos : (state , action) => {
+      const todoFilter = state.todos?.filter((todo) => todo.id !== action.payload.todoId)
+      state.todos = todoFilter
+      console.log(todoFilter)
   },
+  
+  }
 });
 
-export const { submitTodoHandler, incrementPoints, decreasePoints } =
+export const { submitTodoHandler, incrementPoints, decreasePoints ,deleteTodos } =
   appSlice.actions;
 
 export default appSlice.reducer;
