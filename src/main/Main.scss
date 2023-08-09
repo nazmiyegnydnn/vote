@@ -4,6 +4,22 @@
     justify-content: center;
     align-items: center;
     font-size:x-large;
+    .return{
+     margin-left: -440px;
+     button{
+        border: 0;
+        background-color: white;
+        font-weight: bold;
+        font-size: medium;
+        &:hover{
+      
+            cursor: pointer;
+            background-color: #333333;
+            border-radius: 10px;
+            color: white;
+           }
+     }
+    }
     .todo-title{
         margin-top: 60px;
     }
@@ -32,5 +48,25 @@
         background-color: white;
         }
        }
+    }
+    .alert-wrapper{
+        .alert-warning{
+            background-color:lightcoral;
+            color: red;
+            border: 1px solid darkred;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+           }
+        .alert-success{
+            background-color: lightgreen;
+            color: green;
+            border: 1px solid darkgreen;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        
+
     }
 }

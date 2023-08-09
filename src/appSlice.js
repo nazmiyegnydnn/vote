@@ -1,23 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit' 
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { //dizimiz depomuz burada
-    todos: [],
-}
-  
+const initialState = {
+  todos: [],
+};
 
-  export const appSlice =  createSlice({ //appslice kendi dosyomızın ismine göre değişitir.
-    name: 'app',   //appslice kendi dosyomızın ismine göre değişitir.
-    initialState,
-    reducers: {
-            // kull olay //
-            submitTodoHandler : (state , action)  => {
-            state.todos = [...state.todos ,  action.payload] 
-        
-        }
-    
-    }
-  })
+export const appSlice = createSlice({
+  name: "app",
+  initialState,
+  reducers: {
+    submitTodoHandler: (state, action) => {
+      state.todos = [...state.todos, action.payload];
+    },
+    incrementPoints: (state, action) => {
+      const { todoId } = action.payload;
+      const updatedTodos = state.todos.map((todo) =>
+        todo.id === todoId ? { ...todo, points: todo.points + 1 } : todo
+      );
+      state.todos = updatedTodos;
+    },
+    decreasePoints: (state, action) => {
+      const { todoId } = action.payload;
+      const updatedTodos = state.todos.map((todo) =>
+        todo.id === todoId ? { ...todo, points: todo.points - 1 } : todo
+      );
+      state.todos = updatedTodos;
+    },
+  },
+});
 
-  export const {submitTodoHandler } = appSlice.actions  //appslice kendi dosyomızın ismine göre değişitir.//olayı gönderiyoruz
+export const { submitTodoHandler, incrementPoints, decreasePoints } =
+  appSlice.actions;
 
-  export default appSlice.reducer  //appslice kendi dosyomızın ismine göre değişitir.
+export default appSlice.reducer;

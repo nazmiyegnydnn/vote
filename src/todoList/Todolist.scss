@@ -1,0 +1,39 @@
+.todoList{
+  .submitLink{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 450px;
+    border: 1px solid #3333;
+    background-color: rgb(236, 234, 234);
+    color: black;
+    padding: 15px  150px;
+    button{
+        padding: 25px 30px;
+        margin-left: -125px;
+        &:hover{
+            cursor: pointer;
+        }
+        span{
+            font-size: xx-large;
+        }
+        p{
+            margin-left: 25px;
+            font-size: x-large;
+        }
+    }
+  }
+  .select{
+    margin-left: 451px;
+    margin-top: 17px;
+    select{
+      font-size: 16px;
+      padding-left: 18px;
+      height: 26px;
+      background: lightgray;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+  }
+}
